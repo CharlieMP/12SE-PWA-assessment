@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+<!-- update the heading to be OWASP Vulnerabilities -->
+
+
+<!-- Use a for loop to display the OWASP ranks in a table. -->
+{% block content %}
+
+<div class="row">
+    {% for v in vulnerabilities %}
+    <div class="col-12 col-md-6 mb-3">
+        <div class="card p-3">
+            <h5>Rank: {{ v.owasp_rank }}</h5>
+            <p>{{ v.vul_name }}</p>
+            <a href="/incidents/{{ v.id }}" class="btn btn-primary">View</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
