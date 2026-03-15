@@ -3,7 +3,7 @@ from sqlalchemy import create_engine, text
 
 app = Flask(__name__)
 
-engine = create_engine('sqlite:///database/cyberwatch.db') #link to the cyberwatch database here
+engine = create_engine('sqlite:///.database/cyberwatch.db') #link to the cyberwatch database here
 
 #route for index.html
 @app.route('/')

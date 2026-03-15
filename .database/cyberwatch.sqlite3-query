@@ -2,11 +2,15 @@
 -- CREATE TABLE vulnerabilities (
 --     id INTEGER PRIMARY KEY AUTOINCREMENT,
 --     vul_name TEXT NOT NULL,
---     owas_rank INTEGER
+--     owasp_rank INTEGER
 -- );
 
+-- INSERT INTO vulnerabilities (vul_name, owasp_rank)
+-- VALUES ("Software or Data Integrity Faliures", 8), ("Security Logging and Alerting Faliures", 9), ("Mishandling of Exceptional Conditions", 10);
+
+
 -- CREATE TABLE incidents (
---     id INTEGER PRIMARY KEY AUTOINCREMENT,
+-- id INTEGER PRIMARY KEY AUTOINCREMENT,
 --     vul_id INTEGER NOT NULL,
 --     inc_name TEXT,
 --     inc_url TEXT,
@@ -26,12 +30,12 @@
 
 
 -- ### Insert incidents into the incidents table ###
--- INSERT INTO incidents (vul_id, inc_name,inc_url,inc_year)
--- VALUES (1, 'Optus','Edward KostHow Did the Optus Data Breach Happen? | UpGuard', 2025),
--- (1,'Snowflake','https://cloudsecurityalliance.org/blog/2025/05/07/unpacking-the-2024-snowflake-data-breach',2024),
--- (1,'Linkedin','https://www.huntress.com/threat-library/data-breach/linkedin-data-breach',2021);
+INSERT INTO incidents (vul_id, inc_name,inc_url,inc_year)
+VALUES (1, 'Optus','Edward KostHow Did the Optus Data Breach Happen? | UpGuard', 2025),
+(1,'Snowflake','https://cloudsecurityalliance.org/blog/2025/05/07/unpacking-the-2024-snowflake-data-breach',2024),
+(1,'Linkedin','https://www.huntress.com/threat-library/data-breach/linkedin-data-breach',2021);
 
 -- ### This statement below updates the incident url for incident id 1 ###
--- UPDATE incidents
--- SET inc_url = 'https://www.upguard.com/blog/how-did-the-optus-data-breach-happen'
--- WHERE id = 1;
+UPDATE incidents
+SET inc_url = 'https://www.upguard.com/blog/how-did-the-optus-data-breach-happen'
+WHERE id = 1;
