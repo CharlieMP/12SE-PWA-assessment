@@ -31,9 +31,7 @@
 
 -- ### Insert incidents into the incidents table ###
 INSERT INTO incidents (vul_id, inc_name,inc_url,inc_year)
-VALUES (1, 'Optus','Edward KostHow Did the Optus Data Breach Happen? | UpGuard', 2025),
-(1,'Snowflake','https://cloudsecurityalliance.org/blog/2025/05/07/unpacking-the-2024-snowflake-data-breach',2024),
-(1,'Linkedin','https://www.huntress.com/threat-library/data-breach/linkedin-data-breach',2021);
+VALUES (2,'Gitlab','https://www.legitsecurity.com/blog/remote-prompt-injection-in-gitlab-duo',2025);
 
 -- ### This statement below updates the incident url for incident id 1 ###
 UPDATE incidents
