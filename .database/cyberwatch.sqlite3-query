@@ -30,10 +30,15 @@
 
 
 -- ### Insert incidents into the incidents table ###
-INSERT INTO incidents (vul_id, inc_name,inc_url,inc_year)
-VALUES (2,'Gitlab','https://www.legitsecurity.com/blog/remote-prompt-injection-in-gitlab-duo',2025);
+-- INSERT INTO incidents (vul_id, inc_name,inc_url,inc_year)
+-- VALUES (2,'Gitlab','https://www.legitsecurity.com/blog/remote-prompt-injection-in-gitlab-duo',2025);
 
--- ### This statement below updates the incident url for incident id 1 ###
-UPDATE incidents
-SET inc_url = 'https://www.upguard.com/blog/how-did-the-optus-data-breach-happen'
-WHERE id = 1;
+-- -- ### This statement below updates the incident url for incident id 1 ###
+-- UPDATE incidents
+-- SET inc_url = 'https://www.upguard.com/blog/how-did-the-optus-data-breach-happen'
+-- WHERE id = 1;
+
+-- write a query that shows all incidents of category broken access control
+SELECT *
+FROM incidents
+WHERE vul_id = 1
