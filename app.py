@@ -34,6 +34,8 @@ def incident_page(vul_id):
     print(vul_id) #this is a print statement to help you understand what data is being returned
     return render_template('incidents.html', vulnerability = vul_id, vul_list = result)
 
-
+@app.route('/add-incident', methods = ['GET'])
+def incident_form():
+    return render_template('add-incident.html')
 
 app.run(debug=True, reloader_type='stat', port=5000)
