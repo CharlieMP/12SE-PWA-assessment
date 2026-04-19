@@ -1,24 +1,48 @@
 {% extends 'base.html' %}
 
 {% block heading %}
-Add an incident
+Add an Incident
 {% endblock %}
 
 {% block content %}
-<form action = "/incidents" method="POST">
+<form action = "/add-incident" method="POST">
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <label for="exampleInputPassword1" class="form-label">Vulnerability Name</label>
+    <select type="text" class="form-control" id="exampleInputPassword1" name="addvulname">
+      <option value="1">Broken access control</option>
+      <option value="4">Security Misconfiguration</option>
+      <option value="6">Software Supply Chain Faliures</option>
+      <option value="5">Cryptographic Faliures</option>
+      <option value="2">Injection</option>
+      <option value="7">Insecure Design</option>
+      <option value="3">Authentication Failures</option>
+      <option value="8">Software or Data Integrity Faliures</option>
+      <option value="9">Security Logging and Alerting Faliures</option>
+      <option value="10">Mishandling of Exceptional Conditions</option>
+    </select>
+  </div>
+  <div class="row">
+    <div class="col-6">
+        <label for="exampleInputPassword1" class="form-label">Incident Name</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" name="addincidentname">
+    </div>
+    <div class="col-6">
+      <label for="integer" class="form-label">Incident Year</label>
+      <input type="number" class="form-control" id="exampleInputPassword1" name="addyear">
+    </div>
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
+  <label for="exampleInputPassword1" class="form-label">Incident Link</label>
+  <div class="input-group">
+    <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+    <input type="url" class="form-control" id="exampleInputPassword1" name="addurl">
   </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
+</div>
+  <!-- <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Incident Link</label>
+    <input type="url" class="form-control" id="exampleInputPassword1" name="addurl">
+  </div> -->
+  
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 {% endblock %}

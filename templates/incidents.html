@@ -14,6 +14,9 @@
             <h5>Incident: {{ v.inc_name }}</h5>
             <p>{{ v.inc_year }}</p>
             <p>{{ v.inc_url }}</p>
+            <form action = "{{ v.inc_url }}">
+                <input type="submit" value="Open Link" />
+            </form>
         </div>
     </div>
     

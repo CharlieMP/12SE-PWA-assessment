@@ -9,10 +9,10 @@
 <div class="row">
     {% for v in vulnerabilities %}
     <div class="col-12 col-md-12 mb-3">
-        <div class="card p-3">
+        <div class="card text-bg-info p-3">
             <h5>{{ v.vul_name }}</h5>
             <p>Rank: {{ v.owasp_rank }}</p>
-            <a href="/incidents/{{ v.id }}" class="btn btn-warning">View</a>
+            <a href="/incidents/{{ v.id }}" class="btn btn-primary">View</a>
         </div>
     </div>
     {% endfor %}
