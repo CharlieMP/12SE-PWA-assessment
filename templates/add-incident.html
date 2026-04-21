@@ -28,7 +28,7 @@ Add an Incident
     </div>
     <div class="col-6">
       <label for="integer" class="form-label">Incident Year</label>
-      <input type="number" class="form-control" id="exampleInputPassword1" name="addyear">
+      <input type="number" class="form-control" id="exampleInputPassword1" name="addyear" min="1996", max="2026">
     </div>
   </div>
   <div class="mb-3">
@@ -45,6 +45,6 @@ Add an Incident
   
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-<a href="/" class="btn btn-primary">Home</a>
+<a href="/" class="btn btn-info">Home</a>
 </div>
 {% endblock %}

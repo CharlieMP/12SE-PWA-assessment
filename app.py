@@ -64,4 +64,9 @@ def add_incident():
 
     return render_template('add-incident.html')
 
+
+# @app.route('/filter', methods=['GET'])
+# def filter_vulnerabilities(vul_id):
+   
+
 app.run(debug=True, reloader_type='stat', port=5000)
