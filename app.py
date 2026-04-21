@@ -26,12 +26,27 @@ def incident_page(vul_id):
         vulnamequery = text("SELECT vul_name FROM vulnerabilities WHERE id = {};".format(vul_id))
         vulnameresult = connection.execute(vulnamequery).fetchall()
     # TASK 3: Fetch all Incidents linked to this vul_id, return incidents list
+        year = request.args.get('year', '')
+        if year:
+            print('year', year)
+            query = text('SELECT inc_name, inc_url, inc_year FROM incidents WHERE vul_id = {} AND inc_year={}'.format(vul_id, year))
+        else:
+            print('no year')
+            query = text('SELECT inc_name, inc_url, inc_year FROM incidents WHERE vul_id = {}'.format(vul_id))
+ 
         
         
-        query = text('SELECT inc_name, inc_url, inc_year FROM incidents WHERE vul_id = {}'.format(vul_id))
         result = connection.execute(query, {"vul_id": vul_id}).fetchall()
         print(result)
     
+        result_filtered = []
+        for r in result:
+            # x=r[2]
+            # print(x,type(x))
+            if r[2] == 2024:
+                result_filtered.append(r)
+        print(result_filtered)
+
     # print(vul_id) #this is a print statement to help you understand what data is being returned
     return render_template('incidents.html', vulnerability = vulnameresult[0][0], vul_list = result)
 
@@ -65,8 +80,7 @@ def add_incident():
     return render_template('add-incident.html')
 
 
-# @app.route('/filter', methods=['GET'])
-# def filter_vulnerabilities(vul_id):
+
    
 
 app.run(debug=True, reloader_type='stat', port=5000)
