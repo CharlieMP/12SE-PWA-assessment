@@ -7,12 +7,12 @@
     "theme_color": "#0000ff",
     "icons": [
     {
-        "src": "/static/icons/Cyberwatchicon (192 x 192 px).png",
+        "src": "/static/icons/Cyberwatch-icon (192 x 192 px).png",
         "sizes": "192x192",
         "type": "image/png"
     },
     {
-        "src": "/static/icons/Cyberwatchicon (512 x 512 px).png",
+        "src": "/static/icons/Cyberwatch-icon (512 x 512 px).png",
         "sizes": "512x512",
         "type": "image/png"
     }
